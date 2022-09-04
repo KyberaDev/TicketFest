@@ -1,0 +1,27 @@
+.createGroup
+    padding: 40px 25px !important
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    .input
+        width: 80%
+        height: 35px
+        @include animated_input
+
+        margin-bottom: 10px
+
+        .input__input:focus ~ .input__label,
+        .input__input:not(:placeholder-shown).input__input:not(:focus) ~ .input__label
+            top: -7px
+            font-size: 12px
+            background: #ffffff
+            color: $main__blue
+
+    .add-btn
+        @include main_btn
+        width: 80%
+
+    .message
+        text-align: center

@@ -1,0 +1,54 @@
+nav
+    position: fixed
+    width: 100%
+    height: 60px
+    background: transparent
+
+    bottom: 0
+    left: 0
+
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+    .nav_link
+        width: 40px
+        height: 40px
+        margin: 10px
+        border-radius: 13px
+
+        text-decoration: none
+        background: none
+        border: none
+
+        display: flex
+
+        i
+            margin: auto
+            color: $main__blue
+
+        &.main
+            background: $main__blue
+            i
+                color: #ffffff
+        &.active
+            i
+                color: $secondary__blue
+
+header
+    position: absolute
+    width: 100%
+    height: 60px
+    background: transparent
+    padding: 20px
+
+    top: 0
+    left: 0
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .header_link
+        i
+            color: #ffffff

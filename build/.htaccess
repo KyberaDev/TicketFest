@@ -1,0 +1,5 @@
+RewriteOptions inherit
+Options +FollowSymLinks
+RewriteEngine on
+
+DirectoryIndex index.html
