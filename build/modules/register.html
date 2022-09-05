@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Iniciar Sesión</title>
+        <title>TicketFest - Registro</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -101,12 +101,22 @@
                     src="/TicketFest/build/assets/images/Ticket_Icon.svg"
                     alt="TicketFest Icon"
                 />
-                <h1>Iniciar Sesión</h1>
+                <h1>Registro</h1>
                 <form
                     class="input_wrapper"
                     action="javascript:void(0)"
                     method="post"
                 >
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            id="name"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="name" class="input__label">Name</label>
+                    </div>
                     <div class="input">
                         <input
                             class="input__input"
@@ -131,14 +141,24 @@
                             >Password</label
                         >
                     </div>
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="email"
+                            id="email"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="email" class="input__label">Email</label>
+                    </div>
                     <button class="login-btn">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Iniciar Sesión
+                        Registrarse
                     </button>
                     <p class="msg">
-                        ¿Aún no tienes una cuenta?
-                        <a href="/TicketFest/build/modules/register.html">
-                            Registrate.</a
+                        ¿Ya tienes una cuenta? <br />
+                        <a href="/TicketFest/build/modules/login.html">
+                            Inicia Sesión.</a
                         >
                     </p>
                 </form>
