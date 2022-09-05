@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Facilita el pago de salidas o eventos.</title>
+        <title>TicketFest - Crear Grupo.</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -86,25 +86,6 @@
         <!-- ==================================================================== -->
     </head>
     <body>
-        <div class="loading">
-            <div class="loading__container">
-                <img
-                    src="/TicketFest/build/assets/images/Ticket_Icon.svg"
-                    alt="TicketFest Icon"
-                />
-
-                <div class="lds-dots">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <span class="brand">
-                <h4>Powered By</h4>
-                <h3>Kybera</h3>
-            </span>
-        </div>
-
         <header>
             <a href="/TicketFest/build/" class="header_link">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -114,64 +95,48 @@
             </a>
         </header>
 
-        <main>
-            <div class="header__container">
-                <div class="message">
-                    <h1>
-                        Bienvenido,<br />
-                        <span>Juan Morena.</span>
-                    </h1>
-                    <img
-                        src="/TicketFest/build/assets/images/Ticket_Icon.svg"
-                        alt="TicketFest Icon"
-                    />
-                </div>
-                <div class="actualDate">
-                    <p>5 de Setiembre de 2022</p>
-                </div>
-            </div>
-            <div class="card__container">
-                <div class="card">
-                    <!-- <div class="list">
-                        <h2>
-                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
-                        </h2>
-                    </div> -->
-                    <div class="list-empty">
-                        <p>
-                            <i class="fa-solid fa-circle-info"></i> No tienes
-                            tickets activos aún. <br />
-                            Añade un ticket nuevo o unete a uno para verlo en la
-                            lista.
-                        </p>
-                        <a href="" class="card-btn"
-                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
-                        >
-                        <a href="" class="card-btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Unirse a un Ticket</a
+        <div class="login__wrapper">
+            <div class="login__header">
+                <img
+                    src="/TicketFest/build/assets/images/Ticket_Icon.svg"
+                    alt="TicketFest Icon"
+                />
+                <h1>Iniciar Sesión</h1>
+                <div class="input_wrapper">
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            id="username"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="username" class="input__label"
+                            >Username</label
                         >
                     </div>
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="password"
+                            id="passwd"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="passwd" class="input__label"
+                            >Password</label
+                        >
+                    </div>
+                    <button class="login-btn">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Iniciar Sesión
+                    </button>
                 </div>
             </div>
-        </main>
-
-        <nav>
-            <a href="/TicketFest/build/" class="nav_link active">
-                <i class="fas fa-home"></i>
-            </a>
-            <a href="/TicketFest/build/modules/groups.html" class="nav_link">
-                <i class="fa-solid fa-people-group"></i>
-            </a>
-            <a href="" class="nav_link main">
-                <i class="fa-solid fa-plus"></i>
-            </a>
-            <a href="" class="nav_link">
-                <i class="fa-solid fa-ticket"></i>
-            </a>
-            <a href="" class="nav_link">
-                <i class="fa-solid fa-list-check"></i>
-            </a>
-        </nav>
+            <span class="brand">
+                <h4>Powered By</h4>
+                <h3>Kybera</h3>
+            </span>
+        </div>
     </body>
 </html>
