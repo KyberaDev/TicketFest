@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ==================================================================== -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ==================================================================== -->
+
+    <title>TicketFest - Mis Grupos.</title>
+    <meta name="description" content="Descripción de la página. Menos de 150 caracteres." />
+    <meta name="keywords" content="Palabras, Clave, de, la, página." />
+    <meta name="robots" content="index,follow" />
+
+    <!-- ===========================[Preconnects]============================ -->
+
+    <!-- ==================================================================== -->
+
+    <link rel="stylesheet" href="../styles/main.min.css" media="all" />
+
+    <!-- =============================[Preloads]============================= -->
+
+    <!-- ==================================================================== -->
+
+    <script src="../js/app.js" defer></script>
+    <script src="https://kit.fontawesome.com/1e193e3a23.js" crossorigin="anonymous"></script>
+
+    <!-- ==================================================================== -->
+
+    <meta name="author" content="Nombre del Creador de la Página." />
+    <meta name="apple-mobile-web-app-title" content="Page Name" />
+    <meta name="application-name" content="Page Name" />
+    <meta name="theme-color" content="#4a78fc" />
+
+    <!-- ==================================================================== -->
+
+    <link rel="shortcut icon" href="../assets/images/TicketFest_Icon.svg" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../assets/images/TicketFest_Icon.svg" />
+    <!-- <link rel="manifest" href="/TicketFest//build/manifest.webmanifest" /> -->
+
+    <!-- ==================================================================== -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.website.com/" />
+    <meta property="og:title" content="Title — Subtitle" />
+    <meta property="og:description" content="Descripción de la página. Menos de 150 caracteres." />
+    <meta property="og:image" content="https://www.website.com/media/MetaImage.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.website.com/" />
+    <meta property="twitter:title" content="Title — Subtitle" />
+    <meta property="twitter:description" content="Descripción de la página. Menos de 150 caracteres." />
+    <meta property="twitter:image" content="https://www.website.com/media/MetaImage.png" />
+
+    <!-- ==================================================================== -->
+</head>
+
+<body>
+    <header>
+        <a href="../" class="header_link">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <a href="../" class="header_link">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </a>
+    </header>
+
+    <main>
+        <div class="header__container">
+            <div class="message">
+                <h1>
+                    Mis<br />
+                    <span>Grupos</span>
+                </h1>
+            </div>
+        </div>
+        <div class="card__container">
+            <div class="card">
+                <div class="list">
+                    <div class="list__header">
+                        <h2><i class="fa-solid fa-list-ul"></i> Grupos</h2>
+                        <a href="http://localhost:3000/groups/addGroup"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="list__container">
+                            <% for(let i=0; i < groups.length; i++) { %>
+                                <button class="item">
+                                    <h3><%= groups[i].nombre %></h3>
+                                    <p><i class="fa-solid fa-users"></i> 10</p>
+                                    <p>
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        <%= groups[i].fecha_creacion %>
+                                    </p>
+                                    <div class="members">
+                                        <div class="member">
+                                            <p>E</p>
+                                        </div>
+                                        <div class="member">
+                                            <p>X</p>
+                                        </div>
+                                        <div class="member">
+                                            <p>A</p>
+                                        </div>
+                                        <div class="member last">
+                                            <p>+7</p>
+                                        </div>
+                                    </div>
+                                </button>
+
+                                <% if(i != groups.length - 1) { %> <hr /> <% } %>
+                            <% } %>
+                    </div>
+                </div>
+                <!-- <div class="list-empty">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i> No tienes
+                            grupos aún. <br />
+                            Crea un grupo o unete a uno.
+                        </p>
+                        <a
+                            href="../modules/createGroup.html"
+                            class="card-btn"
+                            ><i class="fa-solid fa-person-circle-plus"></i>
+                            Crear Grupo</a
+                        >
+                        <a href="" class="card-btn">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            Unirse a un Grupo</a
+                        >
+                    </div> -->
+            </div>
+        </div>
+    </main>
+
+    <nav>
+        <a href="../" class="nav_link">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="http://localhost:3000/groups" class="nav_link active">
+            <i class="fa-solid fa-people-group"></i>
+        </a>
+        <a href="" class="nav_link main">
+            <i class="fa-solid fa-plus"></i>
+        </a>
+        <a href="" class="nav_link">
+            <i class="fa-solid fa-ticket"></i>
+        </a>
+        <a href="" class="nav_link">
+            <i class="fa-solid fa-list-check"></i>
+        </a>
+    </nav>
+</body>
+
+</html>
