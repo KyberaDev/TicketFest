@@ -112,35 +112,49 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card">
-                    <!-- <div class="list">
-                        <h2>
-                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
-                        </h2>
-                    </div> -->
-                    <div class="list-empty">
-                        <p>
-                            <i class="fa-solid fa-circle-info"></i> No tienes
-                            tickets activos aún. <br />
-                            Añade un ticket nuevo o unete a uno para verlo en la
-                            lista.
-                        </p>
-                        <a href="" class="card-btn"
-                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
-                        >
-                        <a href="" class="card-btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Unirse a un Ticket</a
-                        >
+                <div class="card selectGroup">
+                    <div class="progress-bar">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="step_wrapper">
+                            <span class="step active" id="s1"></span>
+                            <span class="step" id="s2"></span>
+                            <span class="step" id="s3"></span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="list">
-                        <h2>
-                            <i class="fa-regular fa-clock"></i> Tickets
-                            Pendientes
-                        </h2>
+                    <div class="step" id="step1">
+                        <div class="input">
+                            <select
+                                class="input__input"
+                                name=""
+                                id="groupName"
+                                placeholder=" "
+                            >
+                                <option value="0" disabled hidden></option>
+                                <option value="1">Grupo #1</option>
+                                <option value="2">Grupo #2</option>
+                                <option value="3">Grupo #3</option>
+                            </select>
+                            <label for="groupName" class="input__label"
+                                >Seleccione un Grupo</label
+                            >
+                        </div>
+                        <button class="add-btn">
+                            <i class="fa-solid fa-arrow-right"></i> Siguiente
+                        </button>
+                        <p class="belowMessage">
+                            ¿No tienes un grupo creado aún? Haz click
+                            <a href="/TicketFest/build/modules/createGroup.html"
+                                >aquí</a
+                            >.
+                        </p>
+                        <p class="message">
+                            <i class="fa-solid fa-circle-info"></i> Selecciona
+                            el grupo al cual quieres creearle un ticket, cada
+                            ticket es unico, por lo cual un grupo puede tener
+                            más de un ticket activo.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -150,10 +164,13 @@
             <a href="/TicketFest/build/" class="nav_link active">
                 <i class="fas fa-home"></i>
             </a>
-            <a href="" class="nav_link">
+            <a href="/TicketFest/build/modules/groups.html" class="nav_link">
                 <i class="fa-solid fa-people-group"></i>
             </a>
-            <a href="" class="nav_link main">
+            <a
+                href="/TicketFest/build/modules/createTicket.html"
+                class="nav_link main"
+            >
                 <i class="fa-solid fa-plus"></i>
             </a>
             <a href="" class="nav_link">

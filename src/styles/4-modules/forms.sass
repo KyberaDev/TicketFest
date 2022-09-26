@@ -1,9 +1,16 @@
-.createGroup, .joinGroup
+.createGroup, .joinGroup, .selectGroup
     padding: 40px 25px !important
     display: flex
     justify-content: center
     align-items: center
     flex-direction: column
+
+    .step
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
 
     .input
         width: 80%
@@ -27,6 +34,7 @@
         text-align: center
         color: #999
         margin: 10px 0
+        max-width: 200px
 
         a
             text-decoration: none
@@ -38,6 +46,11 @@
 
     .message
         text-align: center
+
+.selectGroup
+    .input
+        .input__input
+            padding: 0 10px
 
 .form__wrapper
     width: 100%
