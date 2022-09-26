@@ -6,8 +6,8 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "http://localhost/TicketFest/build/",
-  "start_url": "http://localhost/TicketFest/build/",
+  "scope": "http://localhost/src/web/",
+  "start_url": "http://localhost/src/web/",
   "icons": [
     {
       "src": "/build/assets/icons/Kybera__Icon192.webp",

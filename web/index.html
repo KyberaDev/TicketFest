@@ -21,17 +21,13 @@
 
         <!-- ==================================================================== -->
 
-        <link
-            rel="stylesheet"
-            href="styles/main.min.css"
-            media="all"
-        />
+        <link rel="stylesheet" href="/styles/main.min.css" media="all" />
 
         <!-- =============================[Preloads]============================= -->
 
         <!-- ==================================================================== -->
 
-        <script src="js/app.js" defer></script>
+        <script src="/js/app.js" defer></script>
         <script
             src="https://kit.fontawesome.com/1e193e3a23.js"
             crossorigin="anonymous"
@@ -39,21 +35,21 @@
 
         <!-- ==================================================================== -->
 
-        <meta name="author" content="Nombre del Creador de la Página." />
-        <meta name="apple-mobile-web-app-title" content="Page Name" />
-        <meta name="application-name" content="Page Name" />
+        <meta name="author" content="KyberaDev" />
+        <meta name="apple-mobile-web-app-title" content="TicketFest" />
+        <meta name="application-name" content="TicketFest" />
         <meta name="theme-color" content="#4a78fc" />
 
         <!-- ==================================================================== -->
 
         <link
             rel="shortcut icon"
-            href="assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
             type="image/x-icon"
         />
         <link
             rel="apple-touch-icon"
-            href="assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
         />
         <!-- <link rel="manifest" href="/TicketFest//build/manifest.webmanifest" /> -->
 
@@ -89,7 +85,7 @@
         <!-- <div class="loading">
             <div class="loading__container">
                 <img
-                    src="assets/images/Ticket_Icon.svg"
+                    src="/assets/images/Ticket_Icon.svg"
                     alt="TicketFest Icon"
                 />
 
@@ -107,7 +103,7 @@
 
         <header>
             <div></div>
-            <a href="/TicketFest/build/" class="header_link">
+            <a href="/" class="header_link">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </a>
         </header>
@@ -119,6 +115,13 @@
                         Bienvenido,<br />
                         <span>Juan Morena.</span>
                     </h1>
+                    <img
+                        src="/assets/images/Ticket_Icon.svg"
+                        alt="TicketFest Icon"
+                    />
+                </div>
+                <div class="actualDate">
+                    <p>5 de Setiembre de 2022</p>
                 </div>
             </div>
             <div class="card__container">
@@ -135,43 +138,26 @@
                             Añade un ticket nuevo o unete a uno para verlo en la
                             lista.
                         </p>
-                        <a
-                            href="/TicketFest/build/modules/createTicket.html"
-                            class="card-btn"
+                        <a href="/modules/createTicket.html" class="card-btn"
                             ><i class="fa-solid fa-plus"></i> Crear Ticket</a
                         >
-                        <a
-                            href="/TicketFest/build/modules/joinGroup.html"
-                            class="card-btn"
-                        >
+                        <a href="/modules/joinGroup.html" class="card-btn">
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             Unirse a un Grupo</a
                         >
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="list">
-                        <h2>
-                            <i class="fa-regular fa-clock"></i> Tickets
-                            Pendientes
-                        </h2>
                     </div>
                 </div>
             </div>
         </main>
 
         <nav>
-            <a href="" class="nav_link active">
+            <a href="/" class="nav_link active">
                 <i class="fas fa-home"></i>
             </a>
             <a href="http://localhost:3000/groups" class="nav_link">
                 <i class="fa-solid fa-people-group"></i>
             </a>
-            <a
-                href="/TicketFest/build/modules/createTicket.html"
-                class="nav_link main"
-            >
+            <a href="/modules/createTicket.html" class="nav_link main">
                 <i class="fa-solid fa-plus"></i>
             </a>
             <a href="" class="nav_link">

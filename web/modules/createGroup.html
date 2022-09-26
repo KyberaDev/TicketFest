@@ -21,17 +21,13 @@
 
         <!-- ==================================================================== -->
 
-        <link
-            rel="stylesheet"
-            href="../styles/main.min.css"
-            media="all"
-        />
+        <link rel="stylesheet" href="/styles/main.min.css" media="all" />
 
         <!-- =============================[Preloads]============================= -->
 
         <!-- ==================================================================== -->
 
-        <script src="../js/app.js" defer></script>
+        <script src="/js/app.js" defer></script>
         <script
             src="https://kit.fontawesome.com/1e193e3a23.js"
             crossorigin="anonymous"
@@ -39,21 +35,21 @@
 
         <!-- ==================================================================== -->
 
-        <meta name="author" content="Nombre del Creador de la Página." />
-        <meta name="apple-mobile-web-app-title" content="Page Name" />
-        <meta name="application-name" content="Page Name" />
+        <meta name="author" content="KyberaDev" />
+        <meta name="apple-mobile-web-app-title" content="TicketFest" />
+        <meta name="application-name" content="TicketFest" />
         <meta name="theme-color" content="#4a78fc" />
 
         <!-- ==================================================================== -->
 
         <link
             rel="shortcut icon"
-            href="../assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
             type="image/x-icon"
         />
         <link
             rel="apple-touch-icon"
-            href="../assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
         />
         <!-- <link rel="manifest" href="/TicketFest//build/manifest.webmanifest" /> -->
 
@@ -87,10 +83,10 @@
     </head>
     <body>
         <header>
-            <a href="../" class="header_link">
+            <a href="/" class="header_link">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
-            <a href="../" class="header_link">
+            <a href="/" class="header_link">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </a>
         </header>
@@ -102,6 +98,13 @@
                         Crear<br />
                         <span>Nuevo Grupo</span>
                     </h1>
+                    <img
+                        src="/assets/images/Ticket_Icon.svg"
+                        alt="TicketFest Icon"
+                    />
+                </div>
+                <div class="actualDate">
+                    <p>5 de Setiembre de 2022</p>
                 </div>
             </div>
             <div class="card__container">
@@ -118,15 +121,13 @@
                             >Nombre del Grupo</label
                         >
                     </div>
-                    <button class="add-btn" id="addButton">
+                    <button class="add-btn">
                         <i class="fa-solid fa-person-circle-plus"></i> Crear
                         Grupo
                     </button>
                     <p class="belowMessage">
                         Únete a un grupo, haciendo click
-                        <a href="/TicketFest/build/modules/joinGroup.html"
-                            >aquí</a
-                        >.
+                        <a href="/modules/joinGroup.html">aquí</a>.
                     </p>
                     <p class="message">
                         <i class="fa-solid fa-circle-info"></i> Este grupo
@@ -139,19 +140,13 @@
         </main>
 
         <nav>
-            <a href="../" class="nav_link">
+            <a href="/" class="nav_link">
                 <i class="fas fa-home"></i>
             </a>
-            <a
-                href="../modules/groups.html"
-                class="nav_link active"
-            >
+            <a href="/modules/groups.html" class="nav_link active">
                 <i class="fa-solid fa-people-group"></i>
             </a>
-            <a
-                href="/TicketFest/build/modules/createTicket.html"
-                class="nav_link main"
-            >
+            <a href="/modules/createTicket.html" class="nav_link main">
                 <i class="fa-solid fa-plus"></i>
             </a>
             <a href="" class="nav_link">
@@ -162,41 +157,4 @@
             </a>
         </nav>
     </body>
-    <script>
-
-        let datos_registro
-
-        window.onload = function() {
-
-            document.getElementById('addButton').addEventListener("click", function(event) {            
-            const request = fetch("http://localhost:3000/groups/addGroup", {
-                method: "POST",
-                body: JSON.stringify({ 
-                    "name": document.getElementById("groupName").value 
-                }),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-
-            request
-                .then((response) => {return response.json()})
-                .then((data) => { 
-                    //* SUCCESS *//
-                    if (data.id !== null) {
-                        console.log("cargo los datos del grupo creado")
-                    }else{
-                        console.log("no se pudo crear el grupo")
-                    }
-                })
-                .catch(error => console.log(error))
-            })
-
-        }
-
-        function mostrar_datos(data){
-
-        }
-
-    </script>
 </html>
