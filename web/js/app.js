@@ -41,21 +41,19 @@ const steps = step => {
 }
 
 const modalMessage = async (type, icon, message) => {
-    const response = await fetch('/web/modules/modalMessage.php', {
+    fetch('/modules/modalMessage.php', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
         body: JSON.stringify({
             type: type,
             icon: icon,
             message: message,
         })
-    });
-
-    return response.json();
+    })
+    .then(response => response.json())
+    .then(data => { console.log("🚀 ~ file: app.js ~ line 53 ~ modalMessage ~ data", data)})
+    .catch(err => { console.log("🚀 ~ file: app.js ~ line 54 ~ modalMessage ~ err", err)});
 }
 
 document.getElementById('next-btn').addEventListener('click', function() {
-    modalMessage(0, '<i class="fa-regular fa-circle-check"></i>', 'Se ha creado el ticket correctamente.');
+    modalMessage(0, 'fa-regular fa-circle-check', 'Se ha creado el ticket correctamente.');
 })

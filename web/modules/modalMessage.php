@@ -4,11 +4,14 @@
     $icon = $_POST['icon'];
     $message = $_POST['message'];
 
+    $modalBody = '';
+
     switch($type){
         case 0:
+            $modalBody .= 'Icon: '.$icon.' Message: '.$message;
             break;
     }
 
-    return $modalBody;
+    echo json_encode($modalBody);
 
 ?>
