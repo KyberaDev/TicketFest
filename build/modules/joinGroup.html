@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Facilita el pago de salidas o eventos.</title>
+        <title>TicketFest - Unirse a un Grupo.</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -86,25 +86,6 @@
         <!-- ==================================================================== -->
     </head>
     <body>
-        <div class="loading">
-            <div class="loading__container">
-                <img
-                    src="/TicketFest/build/assets/images/Ticket_Icon.svg"
-                    alt="TicketFest Icon"
-                />
-
-                <div class="lds-dots">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <span class="brand">
-                <h4>Powered By</h4>
-                <h3>Kybera</h3>
-            </span>
-        </div>
-
         <header>
             <a href="/TicketFest/build/" class="header_link">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -118,8 +99,8 @@
             <div class="header__container">
                 <div class="message">
                     <h1>
-                        Bienvenido,<br />
-                        <span>Juan Morena.</span>
+                        Unirse a un<br />
+                        <span>Grupo</span>
                     </h1>
                     <img
                         src="/TicketFest/build/assets/images/Ticket_Icon.svg"
@@ -131,39 +112,47 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card">
-                    <!-- <div class="list">
-                        <h2>
-                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
-                        </h2>
-                    </div> -->
-                    <div class="list-empty">
-                        <p>
-                            <i class="fa-solid fa-circle-info"></i> No tienes
-                            tickets activos aún. <br />
-                            Añade un ticket nuevo o unete a uno para verlo en la
-                            lista.
-                        </p>
-                        <a href="" class="card-btn"
-                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
-                        >
-                        <a
-                            href="/TicketFest/build/modules/joinGroup.html"
-                            class="card-btn"
-                        >
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Unirse a un Grupo</a
+                <div class="card joinGroup">
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            id="groupName"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="groupName" class="input__label"
+                            >Codigo del Grupo</label
                         >
                     </div>
+                    <button class="add-btn">
+                        <i class="fa-solid fa-person-circle-plus"></i> Unirse al
+                        Grupo
+                    </button>
+                    <p class="belowMessage">
+                        Crea un grupo, haciendo click
+                        <a href="/TicketFest/build/modules/createGroup.html"
+                            >aquí</a
+                        >.
+                    </p>
+                    <p class="message">
+                        <i class="fa-solid fa-circle-info"></i> Al unirte a un
+                        grupo obtendrás acceso a la información del Ticket
+                        asociado al mismo. Para unirte pega el codigo de
+                        invitación y haz click en el botón "Unirse al Grupo".
+                    </p>
                 </div>
             </div>
         </main>
 
         <nav>
-            <a href="/TicketFest/build/" class="nav_link active">
+            <a href="/TicketFest/build/" class="nav_link">
                 <i class="fas fa-home"></i>
             </a>
-            <a href="/TicketFest/build/modules/groups.html" class="nav_link">
+            <a
+                href="/TicketFest/build/modules/groups.html"
+                class="nav_link active"
+            >
                 <i class="fa-solid fa-people-group"></i>
             </a>
             <a href="" class="nav_link main">

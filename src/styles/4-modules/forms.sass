@@ -1,4 +1,4 @@
-.createGroup
+.createGroup, .joinGroup
     padding: 40px 25px !important
     display: flex
     justify-content: center
@@ -22,6 +22,19 @@
     .add-btn
         @include main_btn
         width: 80%
+
+    .belowMessage
+        text-align: center
+        color: #999
+        margin: 10px 0
+
+        a
+            text-decoration: none
+            color: $main__blue
+            transition: .2s
+
+        a:hover
+            color: $secondary__blue
 
     .message
         text-align: center
@@ -65,6 +78,7 @@
 
                 .input__input
                     color: #fff
+                    font-size: 14px
 
                 .input__input:focus
                     border-color: #fff
