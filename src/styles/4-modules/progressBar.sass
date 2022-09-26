@@ -1,0 +1,44 @@
+.progress-bar
+    width: 100%
+    height: 8px
+    margin-bottom: 20px
+    position: relative
+
+    .bar
+        width: 100%
+        height: 5px
+        background: #ccc
+        border-radius: 10px
+        overflow: hidden
+        position: relative
+
+        .progress
+            position: absolute
+            top: 0
+            left: 0
+
+            width: 0%
+            height: 5px
+            border-radius: 10px
+            background: linear-gradient(to right, $main__blue, $gradient__blue)
+
+            transition: 1s
+
+    .step_wrapper
+        width: 100%
+        position: absolute
+        top: -5px
+        left: 0
+
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .step
+            width: 15px
+            height: 15px
+            background: #ccc
+            border-radius: 50%
+
+            &.active
+                background: $main__blue
