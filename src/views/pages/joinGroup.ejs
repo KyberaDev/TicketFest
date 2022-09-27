@@ -120,7 +120,11 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card joinGroup">
+                <form
+                    action="javascript:void(0)"
+                    method="post"
+                    class="card joinGroup"
+                >
                     <div class="input">
                         <input
                             class="input__input"
@@ -128,12 +132,13 @@
                             id="groupName"
                             autocomplete="off"
                             placeholder=" "
+                            required
                         />
                         <label for="groupName" class="input__label"
                             >Codigo del Grupo</label
                         >
                     </div>
-                    <button class="add-btn">
+                    <button type="submit" class="add-btn">
                         <i class="fa-solid fa-person-circle-plus"></i> Unirse al
                         Grupo
                     </button>
@@ -147,7 +152,7 @@
                         asociado al mismo. Para unirte pega el codigo de
                         invitación y haz click en el botón "Unirse al Grupo".
                     </p>
-                </div>
+                </form>
             </div>
         </main>
 
