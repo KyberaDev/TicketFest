@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- ==================================================================== -->
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- ==================================================================== -->
+
+        <title>TicketFest - Registro</title>
+        <meta
+            name="description"
+            content="Descripción de la página. Menos de 150 caracteres."
+        />
+        <meta name="keywords" content="Palabras, Clave, de, la, página." />
+        <meta name="robots" content="index,follow" />
+
+        <!-- ===========================[Preconnects]============================ -->
+
+        <!-- ==================================================================== -->
+
+        <link
+            rel="stylesheet"
+            href="/styles/main.min.css"
+            media="all"
+        />
+
+        <!-- =============================[Preloads]============================= -->
+
+        <!-- ==================================================================== -->
+
+        <script src="/src/web/js/app.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/1e193e3a23.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- ==================================================================== -->
+
+        <meta name="author" content="KyberaDev" />
+        <meta name="apple-mobile-web-app-title" content="TicketFest" />
+        <meta name="application-name" content="TicketFest" />
+        <meta name="theme-color" content="#4a78fc" />
+
+        <!-- ==================================================================== -->
+
+        <link
+            rel="shortcut icon"
+            href="/src/web/assets/images/TicketFest_Icon.svg"
+            type="image/x-icon"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="/src/web/assets/images/TicketFest_Icon.svg"
+        />
+        <!-- <link rel="manifest" href="/TicketFest//build/manifest.webmanifest" /> -->
+
+        <!-- ==================================================================== -->
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.website.com/" />
+        <meta property="og:title" content="Title — Subtitle" />
+        <meta
+            property="og:description"
+            content="Descripción de la página. Menos de 150 caracteres."
+        />
+        <meta
+            property="og:image"
+            content="https://www.website.com/media/MetaImage.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.website.com/" />
+        <meta property="twitter:title" content="Title — Subtitle" />
+        <meta
+            property="twitter:description"
+            content="Descripción de la página. Menos de 150 caracteres."
+        />
+        <meta
+            property="twitter:image"
+            content="https://www.website.com/media/MetaImage.png"
+        />
+
+        <!-- ==================================================================== -->
+    </head>
+    <body>
+        <header>
+            <a href="/src/web/" class="header_link">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <a href="/src/web/" class="header_link">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </a>
+        </header>
+
+        <div class="form__wrapper">
+            <div class="form__header">
+                <img
+                    src="/assets/images/Ticket_Icon.svg"
+                    alt="TicketFest Icon"
+                />
+                <h1>Registro</h1>
+                <form
+                    class="input_wrapper"
+                    action="/signup"
+                    method="post"
+                >
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            name="name"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="name" class="input__label">Name</label>
+                    </div>
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            name="username"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="username" class="input__label"
+                            >Username</label
+                        >
+                    </div>
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="password"
+                            name="passwd"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="passwd" class="input__label"
+                            >Password</label
+                        >
+                    </div>
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="email"
+                            name="email"
+                            autocomplete="off"
+                            placeholder=" "
+                        />
+                        <label for="email" class="input__label"
+                            >Email (Opcional)</label
+                        >
+                    </div>
+                    <button class="login-btn">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Registrarse
+                    </button>
+                    <p class="msg">
+                        ¿Ya tienes una cuenta? <br />
+                        <a href="/src/web/modules/login.html">
+                            Inicia Sesión.</a
+                        >
+                    </p>
+                </form>
+            </div>
+            <span class="brand">
+                <h4>Powered By</h4>
+                <h3>Kybera</h3>
+            </span>
+        </div>
+    </body>
+</html>

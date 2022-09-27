@@ -11,6 +11,7 @@ const home_routes = require("./routes/home.js");
 const users_routes = require("./routes/users.js");
 const groups_routes = require("./routes/groups.js");
 const tickets_routes = require("./routes/tickets.js");
+const authentication = require("./routes/authentcation.js");
 
 const app = express();
 
@@ -38,6 +39,12 @@ app.use(users_routes);
 
 // grupos
 app.use(groups_routes);
+
+//tickets
+app.use(tickets_routes);
+
+//autenticacion
+app.use(authentication);
 
 app.listen(app.get("port"), function () {
     console.log("listening on port " + app.get("port"));
