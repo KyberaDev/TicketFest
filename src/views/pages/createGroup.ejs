@@ -120,7 +120,11 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card createGroup">
+                <form
+                    action="javascript:void(0)"
+                    method="post"
+                    class="card createGroup"
+                >
                     <div class="input">
                         <input
                             class="input__input"
@@ -128,12 +132,13 @@
                             id="groupName"
                             autocomplete="off"
                             placeholder=" "
+                            required
                         />
                         <label for="groupName" class="input__label"
                             >Nombre del Grupo</label
                         >
                     </div>
-                    <button class="add-btn">
+                    <button type="submit" class="add-btn">
                         <i class="fa-solid fa-person-circle-plus"></i> Crear
                         Grupo
                     </button>
@@ -147,7 +152,7 @@
                         los miembros del mismo puedan unirse a través de esta
                         aplicación.
                     </p>
-                </div>
+                </form>
             </div>
         </main>
 
