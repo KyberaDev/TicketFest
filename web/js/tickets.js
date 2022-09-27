@@ -1,4 +1,4 @@
-let currentStep = 3;
+let currentStep = 1;
 let totalPrice = 0;
 
 const moneyBtn = document.querySelector(".money");
