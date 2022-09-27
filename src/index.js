@@ -10,7 +10,7 @@ const path = require("path");
 const home_routes = require("./routes/home.js");
 const users_routes = require("./routes/users.js");
 const groups_routes = require("./routes/groups.js");
-//const tickets_routes = require('./routes/tickets.js');
+const tickets_routes = require("./routes/tickets.js");
 
 const app = express();
 

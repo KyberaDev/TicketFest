@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Facilita el pago de salidas o eventos.</title>
+        <title>TicketFest - Crear Ticket</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -107,8 +107,8 @@
             <div class="header__container">
                 <div class="message">
                     <h1>
-                        Bienvenido,<br />
-                        <span>Pedro Sanchez.</span>
+                        Crear<br />
+                        <span>Nuevo Ticket</span>
                     </h1>
                     <img
                         src="/assets/images/Ticket_Icon.svg"
@@ -120,26 +120,52 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card">
-                    <!-- <div class="list">
-                        <h2>
-                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
-                        </h2>
-                    </div> -->
-                    <div class="list-empty">
-                        <p>
-                            <i class="fa-solid fa-circle-info"></i> No tienes
-                            tickets activos aún. <br />
-                            Añade un ticket nuevo o unete a uno para verlo en la
-                            lista.
+                <div class="card selectGroup">
+                    <div class="progress-bar">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="step_wrapper">
+                            <span class="step active" id="s1"></span>
+                            <span class="step" id="s2"></span>
+                            <span class="step" id="s3"></span>
+                        </div>
+                    </div>
+                    <div class="step" id="step1">
+                        <div class="input">
+                            <select
+                                class="input__input"
+                                name=""
+                                id="groupName"
+                                placeholder=" "
+                            >
+                                <option
+                                    value="0"
+                                    disabled
+                                    hidden
+                                    selected
+                                ></option>
+                                <option value="1">Grupo #1</option>
+                                <option value="2">Grupo #2</option>
+                                <option value="3">Grupo #3</option>
+                            </select>
+                            <label for="groupName" class="input__label"
+                                >Seleccione un Grupo</label
+                            >
+                        </div>
+                        <button class="add-btn" id="next-btn">
+                            <i class="fa-solid fa-arrow-right"></i> Siguiente
+                        </button>
+                        <p class="belowMessage">
+                            ¿Quieres crear un grupo? Haz click
+                            <a href="/groups/addGroup">aquí</a>.
                         </p>
-                        <a href="/tickets/createTicket" class="card-btn"
-                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
-                        >
-                        <a href="/groups/joinGroup" class="card-btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Unirse a un Grupo</a
-                        >
+                        <p class="message">
+                            <i class="fa-solid fa-circle-info"></i> Selecciona
+                            el grupo al cual quieres creearle un ticket, cada
+                            ticket es unico, por lo cual un grupo puede tener
+                            más de un ticket activo.
+                        </p>
                     </div>
                 </div>
             </div>

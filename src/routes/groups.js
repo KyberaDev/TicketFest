@@ -10,7 +10,14 @@ router.get("/groups", (req, res) => {
         if (!err) {
             console.log(result);
             const html = await ejs.renderFile(
-                path.join("./", __dirname, "../", "views", "groups.ejs"),
+                path.join(
+                    "./",
+                    __dirname,
+                    "../",
+                    "views",
+                    "pages",
+                    "groups.ejs"
+                ),
                 { groups: result },
                 { async: false }
             );
@@ -19,14 +26,16 @@ router.get("/groups", (req, res) => {
     });
 });
 
-router.get("/groups/addGroup", (req, res) => {
-    res.sendFile("createGroup.html", {
-        root: "../TicketFest/web/modules",
-    });
+router.get("/group", (req, res) => {
+    res.render("pages/group");
 });
 
-router.get("/groups/createGroup", (req, res) => {
+router.get("/groups/addGroup", (req, res) => {
     res.render("pages/createGroup");
+});
+
+router.get("/groups/joinGroup", (req, res) => {
+    res.render("pages/joinGroup");
 });
 
 router.post("/groups/addGroup", (req, res) => {

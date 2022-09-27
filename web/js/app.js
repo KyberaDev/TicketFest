@@ -1,59 +1,82 @@
-const progressBar = step => {
-    const progress = document.querySelector('.progress');
-    const steps = document.querySelectorAll('.step');
-    
-    steps.forEach(element => {
-        element.classList.remove('active');
-    });
+window.addEventListener("load", () => {
+    document.querySelector(".loading").classList.add("active");
+});
 
-    progress.style.width = '0%';
+const backwardArrow = () => {
+    if (document.referrer.includes("localhost")) window.history.back();
+    else location.href = "http://localhost:3000/";
+};
 
-    switch(step){
-        case 1:
-            steps[0].classList.add('active');
+const closeModal = () => {
+    document.querySelector(".modal").classList.add("hide");
+};
 
-            progress.style.width = '0%';
-            break;
+const copyCode = () => {
+    var code = document.getElementById("invCode");
+    code.select();
+    code.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(code.value);
+};
 
-        case 2:
-            steps[0].classList.add('active');
-            steps[1].classList.add('active');
+const groupQR = () => {
+    document.querySelector(".modal").classList.remove("hide");
+};
+// const progressBar = step => {
+//     const progress = document.querySelector('.progress');
+//     const steps = document.querySelectorAll('.step');
 
-            progress.style.width = '50%';
-            break;
+//     steps.forEach(element => {
+//         element.classList.remove('active');
+//     });
 
-        case 3:
-            steps[0].classList.add('active');
-            steps[1].classList.add('active');
-            steps[2].classList.add('active');
+//     progress.style.width = '0%';
 
-            progress.style.width = '100%';
-            break;
-    }
-}
+//     switch(step){
+//         case 1:
+//             steps[0].classList.add('active');
 
-const steps = step => {
-    switch(step){
-        case 1:
-            progressBar(1);
-            break;
-    }
-}
+//             progress.style.width = '0%';
+//             break;
 
-const modalMessage = async (type, icon, message) => {
-    fetch('/modules/modalMessage.php', {
-        method: 'POST',
-        body: JSON.stringify({
-            type: type,
-            icon: icon,
-            message: message,
-        })
-    })
-    .then(response => response.json())
-    .then(data => { console.log("🚀 ~ file: app.js ~ line 53 ~ modalMessage ~ data", data)})
-    .catch(err => { console.log("🚀 ~ file: app.js ~ line 54 ~ modalMessage ~ err", err)});
-}
+//         case 2:
+//             steps[0].classList.add('active');
+//             steps[1].classList.add('active');
 
-document.getElementById('next-btn').addEventListener('click', function() {
-    modalMessage(0, 'fa-regular fa-circle-check', 'Se ha creado el ticket correctamente.');
-})
+//             progress.style.width = '50%';
+//             break;
+
+//         case 3:
+//             steps[0].classList.add('active');
+//             steps[1].classList.add('active');
+//             steps[2].classList.add('active');
+
+//             progress.style.width = '100%';
+//             break;
+//     }
+// }
+
+// const steps = step => {
+//     switch(step){
+//         case 1:
+//             progressBar(1);
+//             break;
+//     }
+// }
+
+// const modalMessage = async (type, icon, message) => {
+//     fetch('/modules/modalMessage.php', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             type: type,
+//             icon: icon,
+//             message: message,
+//         })
+//     })
+//     .then(response => response.json())
+//     .then(data => { console.log("🚀 ~ file: app.js ~ line 53 ~ modalMessage ~ data", data)})
+//     .catch(err => { console.log("🚀 ~ file: app.js ~ line 54 ~ modalMessage ~ err", err)});
+// }
+
+// document.getElementById('next-btn').addEventListener('click', function() {
+//     modalMessage(0, 'fa-regular fa-circle-check', 'Se ha creado el ticket correctamente.');
+// })

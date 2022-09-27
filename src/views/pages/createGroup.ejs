@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Crear Grupo.</title>
+        <title>TicketFest - Crear Grupo</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -82,6 +82,25 @@
         <!-- ==================================================================== -->
     </head>
     <body>
+        <div class="loading">
+            <div class="loading__container">
+                <img
+                    src="/assets/images/Ticket_Icon.svg"
+                    alt="TicketFest Icon"
+                />
+
+                <div class="lds-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span class="brand">
+                <h4>Powered By</h4>
+                <h3>Kybera</h3>
+            </span>
+        </div>
+
         <%- include('../partials/header') %>
 
         <main>
@@ -101,7 +120,11 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card createGroup">
+                <form
+                    action="javascript:void(0)"
+                    method="post"
+                    class="card createGroup"
+                >
                     <div class="input">
                         <input
                             class="input__input"
@@ -109,18 +132,19 @@
                             id="groupName"
                             autocomplete="off"
                             placeholder=" "
+                            required
                         />
                         <label for="groupName" class="input__label"
                             >Nombre del Grupo</label
                         >
                     </div>
-                    <button class="add-btn">
+                    <button type="submit" class="add-btn">
                         <i class="fa-solid fa-person-circle-plus"></i> Crear
                         Grupo
                     </button>
                     <p class="belowMessage">
                         Únete a un grupo, haciendo click
-                        <a href="/modules/joinGroup.html">aquí</a>.
+                        <a href="/groups/joinGroup">aquí</a>.
                     </p>
                     <p class="message">
                         <i class="fa-solid fa-circle-info"></i> Este grupo
@@ -128,7 +152,7 @@
                         los miembros del mismo puedan unirse a través de esta
                         aplicación.
                     </p>
-                </div>
+                </form>
             </div>
         </main>
 

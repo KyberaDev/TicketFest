@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Mis Grupos.</title>
+        <title>TicketFest - Nombre del Grupo</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -83,52 +83,97 @@
     </head>
 
     <body>
-        <%- include('partials/header') %>
+        <div class="modal hide">
+            <div class="modal__container">
+                <button class="closeModal" onclick="closeModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <i class="fa-solid fa-qrcode icon"></i>
+                <h3 class="title">Codigo de Invitación</h3>
+                <div class="input">
+                    <input
+                        class="input__input"
+                        type="text"
+                        id="invCode"
+                        autocomplete="off"
+                        placeholder=" "
+                        value="0c2841de-d6ef-4812-b6db-dc15010cd9e1"
+                    />
+                    <label for="invCode" class="input__label"
+                        >Codigo de Invitación</label
+                    >
+                    <button class="copy" onclick="copyCode()">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                <p>
+                    <i class="fa-regular fa-circle-question"></i> Comparte este
+                    codigo con las personas que quieran unirse al ticket.
+                </p>
+            </div>
+        </div>
+
+        <div class="loading">
+            <div class="loading__container">
+                <img
+                    src="/assets/images/Ticket_Icon.svg"
+                    alt="TicketFest Icon"
+                />
+
+                <div class="lds-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span class="brand">
+                <h4>Powered By</h4>
+                <h3>Kybera</h3>
+            </span>
+        </div>
+        <%- include('../partials/header') %>
 
         <main>
             <div class="header__container">
                 <div class="message">
                     <h1>
-                        Mis<br />
-                        <span>Grupos</span>
+                        Nombre<br />
+                        <span>del Grupo</span>
                     </h1>
+                </div>
+
+                <div class="actualDate">
+                    <p>
+                        <i class="fa-regular fa-calendar-days"></i> 5 de
+                        Setiembre de 2022
+                    </p>
                 </div>
             </div>
             <div class="card__container">
                 <div class="card">
                     <div class="list">
                         <div class="list__header">
-                            <h2><i class="fa-solid fa-list-ul"></i> Grupos</h2>
-                            <a href="http://localhost:3000/groups/addGroup"
-                                ><i class="fa-solid fa-plus"></i
-                            ></a>
+                            <h2>
+                                <i class="fa-solid fa-list-ul"></i> Miembros
+                            </h2>
+                            <button onclick="groupQR()">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </button>
                         </div>
                         <div class="list__container">
-                            <% for(let i=0; i < groups.length; i++) { %>
-                            <button class="item">
-                                <h3><%= groups[i].nombre %></h3>
-                                <p><i class="fa-solid fa-users"></i> 10</p>
-                                <p>
-                                    <i class="fa-regular fa-calendar-days"></i>
-                                    <%= groups[i].fecha_creacion %>
-                                </p>
-                                <div class="members">
-                                    <div class="member">
-                                        <p>E</p>
+                            <div class="user">
+                                <div class="userLeft">
+                                    <div class="icon">
+                                        <h2>J</h2>
                                     </div>
-                                    <div class="member">
-                                        <p>X</p>
-                                    </div>
-                                    <div class="member">
-                                        <p>A</p>
-                                    </div>
-                                    <div class="member last">
-                                        <p>+7</p>
-                                    </div>
+                                    <h3 class="name">Juan Andrés Morena</h3>
                                 </div>
-                            </button>
-
-                            <% } %>
+                                <div class="userRight">
+                                    <button>
+                                        <i class="fa-solid fa-user-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="list-empty">
@@ -152,6 +197,6 @@
             </div>
         </main>
 
-        <%- include('partials/navigation') %>
+        <%- include('../partials/navigation') %>
     </body>
 </html>

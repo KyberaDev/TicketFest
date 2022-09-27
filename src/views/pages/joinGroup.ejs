@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Facilita el pago de salidas o eventos.</title>
+        <title>TicketFest - Unirse a un Grupo.</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -107,8 +107,8 @@
             <div class="header__container">
                 <div class="message">
                     <h1>
-                        Bienvenido,<br />
-                        <span>Pedro Sanchez.</span>
+                        Unirse a un<br />
+                        <span>Grupo</span>
                     </h1>
                     <img
                         src="/assets/images/Ticket_Icon.svg"
@@ -120,28 +120,39 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card">
-                    <!-- <div class="list">
-                        <h2>
-                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
-                        </h2>
-                    </div> -->
-                    <div class="list-empty">
-                        <p>
-                            <i class="fa-solid fa-circle-info"></i> No tienes
-                            tickets activos aún. <br />
-                            Añade un ticket nuevo o unete a uno para verlo en la
-                            lista.
-                        </p>
-                        <a href="/tickets/createTicket" class="card-btn"
-                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
-                        >
-                        <a href="/groups/joinGroup" class="card-btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            Unirse a un Grupo</a
+                <form
+                    action="javascript:void(0)"
+                    method="post"
+                    class="card joinGroup"
+                >
+                    <div class="input">
+                        <input
+                            class="input__input"
+                            type="text"
+                            id="groupName"
+                            autocomplete="off"
+                            placeholder=" "
+                            required
+                        />
+                        <label for="groupName" class="input__label"
+                            >Codigo del Grupo</label
                         >
                     </div>
-                </div>
+                    <button type="submit" class="add-btn">
+                        <i class="fa-solid fa-person-circle-plus"></i> Unirse al
+                        Grupo
+                    </button>
+                    <p class="belowMessage">
+                        Crea un grupo, haciendo click
+                        <a href="/groups/addGroup">aquí</a>.
+                    </p>
+                    <p class="message">
+                        <i class="fa-solid fa-circle-info"></i> Al unirte a un
+                        grupo obtendrás acceso a la información del Ticket
+                        asociado al mismo. Para unirte pega el codigo de
+                        invitación y haz click en el botón "Unirse al Grupo".
+                    </p>
+                </form>
             </div>
         </main>
 
