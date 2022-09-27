@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Crear Grupo</title>
+        <title>TicketFest - Crear Ticket</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -108,7 +108,7 @@
                 <div class="message">
                     <h1>
                         Crear<br />
-                        <span>Nuevo Grupo</span>
+                        <span>Nuevo Ticket</span>
                     </h1>
                     <img
                         src="/assets/images/Ticket_Icon.svg"
@@ -120,33 +120,48 @@
                 </div>
             </div>
             <div class="card__container">
-                <div class="card createGroup">
-                    <div class="input">
-                        <input
-                            class="input__input"
-                            type="text"
-                            id="groupName"
-                            autocomplete="off"
-                            placeholder=" "
-                        />
-                        <label for="groupName" class="input__label"
-                            >Nombre del Grupo</label
-                        >
+                <div class="card selectGroup">
+                    <div class="progress-bar">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="step_wrapper">
+                            <span class="step active" id="s1"></span>
+                            <span class="step" id="s2"></span>
+                            <span class="step" id="s3"></span>
+                        </div>
                     </div>
-                    <button class="add-btn">
-                        <i class="fa-solid fa-person-circle-plus"></i> Crear
-                        Grupo
-                    </button>
-                    <p class="belowMessage">
-                        Únete a un grupo, haciendo click
-                        <a href="/groups/joinGroup">aquí</a>.
-                    </p>
-                    <p class="message">
-                        <i class="fa-solid fa-circle-info"></i> Este grupo
-                        generará un codigo de invitación unico para que todos
-                        los miembros del mismo puedan unirse a través de esta
-                        aplicación.
-                    </p>
+                    <div class="step" id="step1">
+                        <div class="input">
+                            <select
+                                class="input__input"
+                                name=""
+                                id="groupName"
+                                placeholder=" "
+                            >
+                                <option value="0" disabled hidden></option>
+                                <option value="1">Grupo #1</option>
+                                <option value="2">Grupo #2</option>
+                                <option value="3">Grupo #3</option>
+                            </select>
+                            <label for="groupName" class="input__label"
+                                >Seleccione un Grupo</label
+                            >
+                        </div>
+                        <button class="add-btn" id="next-btn">
+                            <i class="fa-solid fa-arrow-right"></i> Siguiente
+                        </button>
+                        <p class="belowMessage">
+                            ¿No tienes un grupo creado aún? Haz click
+                            <a href="/groups/addGroup">aquí</a>.
+                        </p>
+                        <p class="message">
+                            <i class="fa-solid fa-circle-info"></i> Selecciona
+                            el grupo al cual quieres creearle un ticket, cada
+                            ticket es unico, por lo cual un grupo puede tener
+                            más de un ticket activo.
+                        </p>
+                    </div>
                 </div>
             </div>
         </main>

@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "root",
-    database: `ticketfest_bd_v1.0.0`,
+    database: "ticketfest_bd_v1.0.0",
 });
 
 //* FUNCTIONS *//

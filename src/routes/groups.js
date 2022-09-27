@@ -12,7 +12,7 @@ router.get("/groups", (req, res) => {
             const html = await ejs.renderFile(
                 path.join("./", __dirname, "../", "views", "groups.ejs"),
                 { groups: result },
-                { async: true }
+                { async: false }
             );
             res.send(html);
         } else console.log(err);
@@ -20,13 +20,11 @@ router.get("/groups", (req, res) => {
 });
 
 router.get("/groups/addGroup", (req, res) => {
-    res.sendFile("createGroup.html", {
-        root: "../TicketFest/web/modules",
-    });
+    res.render("pages/createGroup");
 });
 
-router.get("/groups/createGroup", (req, res) => {
-    res.render("pages/createGroup");
+router.get("/groups/joinGroup", (req, res) => {
+    res.render("pages/joinGroup");
 });
 
 router.post("/groups/addGroup", (req, res) => {

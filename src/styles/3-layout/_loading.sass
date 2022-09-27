@@ -12,9 +12,6 @@
     position: absolute
     z-index: 500
 
-    animation: loading-delay .5s linear forwards
-    animation-delay: 2s
-
     .loading__container
         display: flex
         justify-content: center
@@ -66,6 +63,9 @@
 
         h3
             font-size: 25px
+
+.loading.active
+    animation: loading-delay .5s linear forwards
 
 @keyframes loading-delay
     0%
