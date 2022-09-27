@@ -83,6 +83,36 @@
     </head>
 
     <body>
+        <div class="modal hide">
+            <div class="modal__container">
+                <button class="closeModal" onclick="closeModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <i class="fa-solid fa-qrcode icon"></i>
+                <h3 class="title">Codigo de Invitación</h3>
+                <div class="input">
+                    <input
+                        class="input__input"
+                        type="text"
+                        id="invCode"
+                        autocomplete="off"
+                        placeholder=" "
+                        value="0c2841de-d6ef-4812-b6db-dc15010cd9e1"
+                    />
+                    <label for="invCode" class="input__label"
+                        >Codigo de Invitación</label
+                    >
+                    <button class="copy" onclick="copyCode()">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                <p>
+                    <i class="fa-regular fa-circle-question"></i> Comparte este
+                    codigo con las personas que quieran unirse al ticket.
+                </p>
+            </div>
+        </div>
+
         <div class="loading">
             <div class="loading__container">
                 <img
@@ -126,7 +156,9 @@
                             <h2>
                                 <i class="fa-solid fa-list-ul"></i> Miembros
                             </h2>
-                            <button><i class="fa-solid fa-qrcode"></i></button>
+                            <button onclick="groupQR()">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </button>
                         </div>
                         <div class="list__container">
                             <div class="user">

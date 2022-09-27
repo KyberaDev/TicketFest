@@ -8,7 +8,7 @@ const backwardArrow = () => {
 };
 
 const closeModal = () => {
-    document.querySelector(".modal").classList.add("active");
+    document.querySelector(".modal").classList.add("hide");
 };
 
 const copyCode = () => {
@@ -16,6 +16,10 @@ const copyCode = () => {
     code.select();
     code.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(code.value);
+};
+
+const groupQR = () => {
+    document.querySelector(".modal").classList.remove("hide");
 };
 // const progressBar = step => {
 //     const progress = document.querySelector('.progress');
