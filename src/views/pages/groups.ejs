@@ -123,7 +123,10 @@
                         </div>
                         <div class="list__container">
                             <% for(let i=0; i < groups.length; i++) { %>
-                            <button class="item">
+                            <button
+                                class="item"
+                                onclick="location.href = '/group'"
+                            >
                                 <h3><%= groups[i].nombre %></h3>
                                 <p><i class="fa-solid fa-users"></i> 10</p>
                                 <p>
