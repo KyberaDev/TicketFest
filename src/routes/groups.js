@@ -10,7 +10,14 @@ router.get("/groups", (req, res) => {
         if (!err) {
             console.log(result);
             const html = await ejs.renderFile(
-                path.join("./", __dirname, "../", "views", "groups.ejs"),
+                path.join(
+                    "./",
+                    __dirname,
+                    "../",
+                    "views",
+                    "pages",
+                    "groups.ejs"
+                ),
                 { groups: result },
                 { async: false }
             );
