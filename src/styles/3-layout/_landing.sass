@@ -28,7 +28,7 @@ main
             margin-top: 20px
             p
                 text-align: center
-                color: #cecece
+                color: #eee
                 font-size: 13px
 
     .card__container
@@ -66,7 +66,10 @@ main
                     h2
                         font-size: 15px
 
-                    a
+                    a,button
+                        cursor: pointer
+                        background: transparent
+                        border: none
                         text-decoration: none
                         color: $main__blue
                         font-size: 20px
@@ -131,3 +134,51 @@ main
 
                                 p
                                     color: #333333
+                    .user
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        width: 100%
+                        margin: 5px 0
+                        background: transparent
+                        border: none
+
+                        .userLeft
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            .icon
+                                min-width: 30px
+                                min-height: 30px
+                                border-radius: 50%
+                                background: $main__blue
+                                margin-right: 10px
+
+                                display: flex
+
+                                h2
+                                    font-size: 1em
+                                    margin: auto
+                                    padding: 0
+                                    color: #fff
+
+                            .name
+                                font-size: 1em
+                                color: $main__blue
+
+                        .userRight
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            flex-wrap: wrap
+
+                            button
+                                border: none
+                                border-radius: 10px
+                                background: transparent
+                                cursor: pointer
+                                padding: 0
+                                margin: 10px
+
+                                i
+                                    color: $secondary__blue

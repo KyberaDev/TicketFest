@@ -1,0 +1,90 @@
+.modal
+    width: 100%
+    height: 100vh
+
+    position: fixed
+    top: 0
+    left: 0
+    background: $main__blue
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    z-index: 200
+
+    clip-path: circle(0% at 50% 0%)
+
+    animation: modal-loading .5s forwards
+
+    .closeModal
+        position: absolute
+        top: 20px
+        right: 20px
+        background: transparent
+        border: none
+        font-size: 1.5em
+        color: #fff
+        cursor: pointer
+
+    .modal__container
+        text-align: center
+        color: #fff
+        max-width: 300px
+        .icon
+            font-size: 8em
+            color: #fff
+            margin-bottom: 40px
+
+        .title
+            font-size: 1.5em
+            margin: 0
+
+        .input
+            width: 100%
+            height: 35px
+            @include animated_input
+
+            margin: 20px 0
+
+            .input__input
+                color: #fff
+                padding-right: 40px
+
+            .input__input:focus
+                border: 1px solid #fff
+
+            .input__input:focus ~ .input__label,
+            .input__input:not(:placeholder-shown).input__input:not(:focus) ~ .input__label
+                top: -7px
+                font-size: 12px
+                background: $main__blue
+                color: #fff
+
+            .copy
+                position: absolute
+                right: 0
+                top: 0
+
+                width: 35px
+                height: 35px
+
+                border: none
+                border-radius: 0 10px 10px 0
+                background: transparent
+                color: #fff
+                cursor: pointer
+.modal.active
+    animation: modal-loading-reverse .5s forwards
+
+@keyframes modal-loading
+    0%
+        clip-path: circle(0% at 50% 0%)
+    100%
+        clip-path: circle(200% at 50% 0%)
+
+@keyframes modal-loading-reverse
+    0%
+        clip-path: circle(200% at 50% 0%)
+    100%
+        clip-path: circle(0% at 50% 0%)

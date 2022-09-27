@@ -26,6 +26,10 @@ router.get("/groups", (req, res) => {
     });
 });
 
+router.get("/group", (req, res) => {
+    res.render("pages/group");
+});
+
 router.get("/groups/addGroup", (req, res) => {
     res.render("pages/createGroup");
 });

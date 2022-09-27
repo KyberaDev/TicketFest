@@ -6,6 +6,17 @@ const backwardArrow = () => {
     if (document.referrer.includes("localhost")) window.history.back();
     else location.href = "http://localhost:3000/";
 };
+
+const closeModal = () => {
+    document.querySelector(".modal").classList.add("active");
+};
+
+const copyCode = () => {
+    var code = document.getElementById("invCode");
+    code.select();
+    code.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(code.value);
+};
 // const progressBar = step => {
 //     const progress = document.querySelector('.progress');
 //     const steps = document.querySelectorAll('.step');
