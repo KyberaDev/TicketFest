@@ -9,7 +9,7 @@
 
         <!-- ==================================================================== -->
 
-        <title>TicketFest - Mis Grupos.</title>
+        <title>TicketFest - Facilita el pago de salidas o eventos.</title>
         <meta
             name="description"
             content="Descripción de la página. Menos de 150 caracteres."
@@ -21,13 +21,13 @@
 
         <!-- ==================================================================== -->
 
-        <link rel="stylesheet" href="../styles/main.min.css" media="all" />
+        <link rel="stylesheet" href="/styles/main.min.css" media="all" />
 
         <!-- =============================[Preloads]============================= -->
 
         <!-- ==================================================================== -->
 
-        <script src="../js/app.js" defer></script>
+        <script src="/js/app.js" defer></script>
         <script
             src="https://kit.fontawesome.com/1e193e3a23.js"
             crossorigin="anonymous"
@@ -35,21 +35,21 @@
 
         <!-- ==================================================================== -->
 
-        <meta name="author" content="Nombre del Creador de la Página." />
-        <meta name="apple-mobile-web-app-title" content="Page Name" />
-        <meta name="application-name" content="Page Name" />
+        <meta name="author" content="KyberaDev" />
+        <meta name="apple-mobile-web-app-title" content="TicketFest" />
+        <meta name="application-name" content="TicketFest" />
         <meta name="theme-color" content="#4a78fc" />
 
         <!-- ==================================================================== -->
 
         <link
             rel="shortcut icon"
-            href="../assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
             type="image/x-icon"
         />
         <link
             rel="apple-touch-icon"
-            href="../assets/images/TicketFest_Icon.svg"
+            href="/assets/images/TicketFest_Icon.svg"
         />
         <!-- <link rel="manifest" href="/TicketFest//build/manifest.webmanifest" /> -->
 
@@ -81,77 +81,70 @@
 
         <!-- ==================================================================== -->
     </head>
-
     <body>
-        <%- include('partials/header') %>
+        <!-- <div class="loading">
+            <div class="loading__container">
+                <img
+                    src="/assets/images/Ticket_Icon.svg"
+                    alt="TicketFest Icon"
+                />
+
+                <div class="lds-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <span class="brand">
+                <h4>Powered By</h4>
+                <h3>Kybera</h3>
+            </span>
+        </div> -->
+
+        <%- include('../partials/header') %>
 
         <main>
             <div class="header__container">
                 <div class="message">
                     <h1>
-                        Mis<br />
-                        <span>Grupos</span>
+                        Bienvenido,<br />
+                        <span>Pedro Sanchez.</span>
                     </h1>
+                    <img
+                        src="/assets/images/Ticket_Icon.svg"
+                        alt="TicketFest Icon"
+                    />
+                </div>
+                <div class="actualDate">
+                    <p>5 de Setiembre de 2022</p>
                 </div>
             </div>
             <div class="card__container">
                 <div class="card">
-                    <div class="list">
-                        <div class="list__header">
-                            <h2><i class="fa-solid fa-list-ul"></i> Grupos</h2>
-                            <a href="http://localhost:3000/groups/addGroup"
-                                ><i class="fa-solid fa-plus"></i
-                            ></a>
-                        </div>
-                        <div class="list__container">
-                            <% for(let i=0; i < groups.length; i++) { %>
-                            <button class="item">
-                                <h3><%= groups[i].nombre %></h3>
-                                <p><i class="fa-solid fa-users"></i> 10</p>
-                                <p>
-                                    <i class="fa-regular fa-calendar-days"></i>
-                                    <%= groups[i].fecha_creacion %>
-                                </p>
-                                <div class="members">
-                                    <div class="member">
-                                        <p>E</p>
-                                    </div>
-                                    <div class="member">
-                                        <p>X</p>
-                                    </div>
-                                    <div class="member">
-                                        <p>A</p>
-                                    </div>
-                                    <div class="member last">
-                                        <p>+7</p>
-                                    </div>
-                                </div>
-                            </button>
-
-                            <% if(i != groups.length - 1) { %> <% } %> <% } %>
-                        </div>
-                    </div>
-                    <!-- <div class="list-empty">
+                    <!-- <div class="list">
+                        <h2>
+                            <i class="fa-solid fa-list-ul"></i> Tickets Activos
+                        </h2>
+                    </div> -->
+                    <div class="list-empty">
                         <p>
                             <i class="fa-solid fa-circle-info"></i> No tienes
-                            grupos aún. <br />
-                            Crea un grupo o unete a uno.
+                            tickets activos aún. <br />
+                            Añade un ticket nuevo o unete a uno para verlo en la
+                            lista.
                         </p>
-                        <a
-                            href="../modules/createGroup.html"
-                            class="card-btn"
-                            ><i class="fa-solid fa-person-circle-plus"></i>
-                            Crear Grupo</a
+                        <a href="/modules/createTicket.html" class="card-btn"
+                            ><i class="fa-solid fa-plus"></i> Crear Ticket</a
                         >
-                        <a href="" class="card-btn">
+                        <a href="/modules/joinGroup.html" class="card-btn">
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             Unirse a un Grupo</a
                         >
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </main>
 
-        <%- include('partials/navigation') %>
+        <%- include('../partials/navigation') %>
     </body>
 </html>

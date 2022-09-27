@@ -12,29 +12,38 @@ nav
     justify-content: space-evenly
     align-items: center
 
-    .nav_link
-        width: 40px
-        height: 40px
-        margin: 10px
-        border-radius: 13px
-
-        text-decoration: none
-        background: none
-        border: none
+    ul
+        width: 100%
+        padding: 0
+        list-style: none
 
         display: flex
+        justify-content: space-around
+        align-items: center
 
-        i
-            margin: auto
-            color: $main__blue
+        .nav_link
+            width: 40px
+            height: 40px
+            margin: 10px
+            border-radius: 13px
 
-        &.main
-            background: $main__blue
+            text-decoration: none
+            background: none
+            border: none
+
+            display: flex
+
             i
-                color: #ffffff
-        &.active
-            i
-                color: $secondary__blue
+                margin: auto
+                color: $main__blue
+
+            &.main
+                background: $main__blue
+                i
+                    color: #ffffff
+            &.active
+                i
+                    color: $secondary__blue
 
 header
     position: absolute
