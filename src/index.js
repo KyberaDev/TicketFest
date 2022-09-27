@@ -18,6 +18,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.set("port", process.env.PORT || 3000);
 
 // * middlewares * //
 
@@ -27,7 +28,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("../TicketFest/web"));
 
-//* ROUTES MIDDLEWARE *//
+//* ROUTES *//
 
 // home
 app.use(home_routes);
@@ -38,4 +39,6 @@ app.use(users_routes);
 // grupos
 app.use(groups_routes);
 
-app.listen(3000);
+app.listen(app.get("port"), function () {
+    console.log("listening on port " + app.get("port"));
+});

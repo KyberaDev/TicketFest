@@ -12,7 +12,7 @@ router.get("/groups", (req, res) => {
             const html = await ejs.renderFile(
                 path.join("./", __dirname, "../", "views", "groups.ejs"),
                 { groups: result },
-                { async: true }
+                { async: false }
             );
             res.send(html);
         } else console.log(err);
