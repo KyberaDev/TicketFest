@@ -3,21 +3,6 @@ const { get_usuarios, get_usuarios_by_id, add_usuario} = require('../modulos/dat
 
 const router = new Router();
 
-
-router.get('/login', (req, res) => {
-    get_usuarios((err, result) => {
-        if (!err)
-            res.send(result)
-    })
-})
-
-router.get('/register', (req, res) => {
-    get_usuarios((err, result) => {
-        if (!err)
-            res.send(result)
-    })
-})
-
 router.get('/users', (req, res) => {
     get_usuarios((err, result) => {
         if (!err)
