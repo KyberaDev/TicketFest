@@ -28,6 +28,7 @@
         <!-- ==================================================================== -->
 
         <script src="/js/app.js" defer></script>
+        <script src="/js/tickets.js" defer></script>
         <script
             src="https://kit.fontawesome.com/1e193e3a23.js"
             crossorigin="anonymous"
@@ -153,9 +154,117 @@
                                 >Seleccione un Grupo</label
                             >
                         </div>
-                        <button class="add-btn" id="next-btn">
+                        <button class="add-btn" onclick="next()">
                             <i class="fa-solid fa-arrow-right"></i> Siguiente
                         </button>
+                        <p class="belowMessage">
+                            ¿Quieres crear un grupo? Haz click
+                            <a href="/groups/addGroup">aquí</a>.
+                        </p>
+                        <p class="message">
+                            <i class="fa-solid fa-circle-info"></i> Selecciona
+                            el grupo al cual quieres creearle un ticket, cada
+                            ticket es unico, por lo cual un grupo puede tener
+                            más de un ticket activo.
+                        </p>
+                    </div>
+
+                    <div class="step" id="step2">
+                        <div class="input">
+                            <input
+                                class="input__input"
+                                name=""
+                                id="ticketPrice"
+                                placeholder=" "
+                                type="number"
+                            />
+                            <label for="ticketPrice" class="input__label"
+                                >Precio</label
+                            >
+                        </div>
+                        <div class="button__container">
+                            <button class="add-btn" onclick="back()">
+                                <i class="fa-solid fa-arrow-left"></i> Atrás
+                            </button>
+                            <button class="add-btn" onclick="next()">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                Siguiente
+                            </button>
+                        </div>
+                        <p class="belowMessage">
+                            ¿Quieres crear un grupo? Haz click
+                            <a href="/groups/addGroup">aquí</a>.
+                        </p>
+                        <p class="message">
+                            <i class="fa-solid fa-circle-info"></i> Selecciona
+                            el grupo al cual quieres creearle un ticket, cada
+                            ticket es unico, por lo cual un grupo puede tener
+                            más de un ticket activo.
+                        </p>
+                    </div>
+
+                    <div class="step" id="step3">
+                        <h2>Total: $<span id="totalPrice"></span></h2>
+                        <div class="buttons__wrapper">
+                            <button
+                                class="money activeBalance"
+                                onclick="changeBalanceType('money')"
+                            >
+                                $
+                            </button>
+                            <button
+                                class="percent"
+                                onclick="changeBalanceType('percent')"
+                            >
+                                %
+                            </button>
+                        </div>
+                        <div class="list__container">
+                            <div class="user">
+                                <div class="userLeft">
+                                    <div class="icon">
+                                        <h4>J</h4>
+                                    </div>
+                                    <h3>Juan Andrés Morena</h3>
+                                </div>
+                                <div class="userRight">
+                                    <div class="input">
+                                        <input
+                                            type="number"
+                                            class="input_balance"
+                                        />
+                                        <p class="balanceType">$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user">
+                                <div class="userLeft">
+                                    <div class="icon">
+                                        <h4>G</h4>
+                                    </div>
+                                    <h3>Gastón Firpo</h3>
+                                </div>
+                                <div class="userRight">
+                                    <div class="input">
+                                        <input
+                                            type="number"
+                                            class="input_balance"
+                                        />
+                                        <p class="balanceType">$</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button__container">
+                            <button class="add-btn" onclick="back()">
+                                <i class="fa-solid fa-arrow-left"></i> Atrás
+                            </button>
+                            <button class="add-btn" onclick="finish()">
+                                <i class="fa-solid fa-check"></i>
+                                Finalizar
+                            </button>
+                        </div>
                         <p class="belowMessage">
                             ¿Quieres crear un grupo? Haz click
                             <a href="/groups/addGroup">aquí</a>.
