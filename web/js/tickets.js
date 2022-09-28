@@ -98,14 +98,14 @@ const calculateBalance = () => {
         case "money":
             let amount = totalPrice / users;
             inputs.forEach((element) => {
-                element.value = amount;
+                element.value = Number(amount).toFixed(2);
             });
             break;
 
         case "percent":
             let percent = 100 / users;
             inputs.forEach((element) => {
-                element.value = percent;
+                element.value = Number(percent).toFixed(2);
             });
             break;
     }
