@@ -1,10 +1,12 @@
-<div class="modal hide">
+<% if (type == 0 || type == 1) { %>
+<div class="modal">
     <div class="modal__container">
-        <button class="closeModal" onclick="closeModal()">
+        <button class="closeModal" onclick="window.location.href = '<%= redirect %>'">
             <i class="fa-solid fa-xmark"></i>
         </button>
+        <% if (type == 0) { %>
         <i class="fa-solid fa-qrcode icon"></i>
-        <h3 class="title">Codigo de Invitación</h3>
+        <h3 class="title"><%= text %></h3>
         <div class="input">
             <input
                 class="input__input"
@@ -21,13 +23,27 @@
                 <i class="fa-regular fa-copy"></i>
             </button>
         </div>
+        <% }else{ %>
+            <i class="fa-regular fa-circle-check icon"></i>
+            <h3 class="title"><%= text %></h3>
+        <% } %>
+
         <p>
-            <i class="fa-regular fa-circle-question"></i> Comparte este codigo
-            con las personas que quieran unirse al ticket.
+            <i class="fa-regular fa-circle-question"></i> 
+                <%= description %>
         </p>
     </div>
 </div>
-<!-- <div class="modal">
+<% } else if (type == -1) {%>
+
+<% } %>
+<!--
+
+    Comparte este codigo con las personas que quieran unirse al ticket.
+
+
+
+    <div class="modal">
     <div class="modal__container">
         <button class="closeModal" onclick="closeModal()">
             <i class="fa-solid fa-xmark"></i>
