@@ -182,3 +182,107 @@ main
 
                                 i
                                     color: $secondary__blue
+
+            .step
+                .button__container
+                    width: 80%
+
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-wrap: wrap
+
+                    button
+                        flex: 1
+                        margin: 10px 5px
+
+                .buttons__wrapper
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    margin: 10px 0
+
+                    button
+                        width: 80px
+                        height: 30px
+
+                        background: $main__blue
+                        color: #fff
+                        border: none
+                        cursor: pointer
+
+                    button:hover, button.activeBalance
+                        background: $secondary__blue
+
+                    button:nth-child(1)
+                        border-radius: 10px 0 0 10px
+
+                    button:nth-child(2)
+                        border-radius: 0 10px 10px 0
+
+                .list__container
+                    width: 80%
+                    .user
+                        width: 100%
+                        padding: 10px
+                        margin: 10px 0
+
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+
+                        .userLeft
+                            min-width: 150px
+                            display: flex
+                            justify-content: flex-start
+                            align-items: center
+
+                            .icon
+                                display: flex
+
+                                min-width: 30px
+                                min-height: 30px
+                                border-radius: 50%
+                                background: $main__blue
+                                margin-right: 5px
+
+                                h4
+                                    font-size: 1em
+                                    margin: auto
+                                    color: #fff
+
+                            h3
+                                font-size: 1em
+                                text-align: left
+
+                        .userRight
+                            max-width: 150px
+
+                            display: flex
+                            justify-content: flex-end
+                            align-items: center
+
+                            .input
+                                width: 100%
+
+                                display: flex
+                                justify-content: space-between
+                                align-items: center
+
+                                position: relative
+
+                                input
+                                    width: 100%
+                                    height: 35px
+                                    margin: 0
+                                    text-align: right
+                                    border: none
+                                    border-bottom: 1px solid $main__blue
+                                    color: $main__blue
+
+                                p
+                                    position: absolute
+                                    margin: 0
+                                    right: -14px
+                                    top: 7px
+                                    font-size: 1.2em
