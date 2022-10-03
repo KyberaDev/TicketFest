@@ -23,6 +23,19 @@ const database = mysql.createPool({
 });
 //* FUNCTIONS *//
 
+async function login(username, callback) {
+    let result,
+    err = null;
+
+    try {
+        result = await login__promise(username);
+    } catch (error) {
+        err = error;
+    }
+
+    if (typeof callback == "function") callback(err, result);
+}
+
 async function get_usuarios(callback) {
     let result,
         err = null;
@@ -110,10 +123,20 @@ module.exports = {
     get_grupos,
     add_grupo,
     keys,
-    error
+    error,
+    login
 };
 
 //* PROMISES *//
+
+function login__promise(username) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM usuarios WHERE usuario = '${username}';`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res[0]);
+        });
+    });
+}
 
 function get_usuarios__promise() {
     return new Promise((resolve, reject) => {

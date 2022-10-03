@@ -1,16 +1,17 @@
 const { Router } = require('express');
+const { loggedIn } = require('../lib/auth.js');
 const { get_usuarios, get_usuarios_by_id, add_usuario} = require('../modulos/data.js');
 
 const router = new Router();
 
-router.get('/users', (req, res) => {
+router.get('/users', loggedIn, (req, res) => {
     get_usuarios((err, result) => {
         if (!err)
             res.send(result)
     })
 })
 
-router.get('/users/:id_user', (req, res) => {
+router.get('/users/:id_user', loggedIn, (req, res) => {
     const { id_user } = req.params
     get_usuarios_by_id(id_user, (err, result) => {
         if (!err)
@@ -25,12 +26,12 @@ router.get('/users/:id_user', (req, res) => {
     })
 })
 
-router.post('/users', (req, res) => {
+router.post('/users', loggedIn, (req, res) => {
     const data = req.body;
 
 })
 
-router.put('/users', (req, res) => {
+router.put('/users', loggedIn, (req, res) => {
     res.send('Actualizar usuarios')
 })
 

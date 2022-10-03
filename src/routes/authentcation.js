@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const ejs = require("ejs");
 const path = require("path");
-const passport = require("passport")
+const passport = require("passport");
+const { notLoggedIn } = require("../lib/auth");
 
-router.get('/signup', async (req, res) => {
+router.get('/signup', notLoggedIn, async (req, res) => {
     const html = await ejs.renderFile(
         path.join(
             "./",
@@ -20,15 +21,15 @@ router.get('/signup', async (req, res) => {
     res.send(html);
 });
 
-router.post('/signup', passport.authenticate('local.signup', {
+router.post('/signup', notLoggedIn, passport.authenticate('local.signup', {
     successRedirect: '/',
     failureRedirect: '/signup',
     failureFlash: true
 }));
-/*
 
 
-router.get('/login', async (req, res) => {
+
+router.get('/login', notLoggedIn, async (req, res) => {
     const html = await ejs.renderFile(
         path.join(
             "./",
@@ -45,9 +46,16 @@ router.get('/login', async (req, res) => {
     res.send(html);
 })
 
+router.post('/login', notLoggedIn, (req, res, next) => {
+    passport.authenticate('local.signin', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true
+    })(req, res, next);
+});
 
 
-
+/*
 router.post('/signup', async (req, res) => {
     const data = req.body
     console.log(data.name)

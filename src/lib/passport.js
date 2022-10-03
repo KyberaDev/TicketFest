@@ -1,6 +1,26 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const db = require('../modulos/data');
+const bcrypt = require('bcryptjs');
+
+passport.use('local.signin', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'passwd',
+    passReqToCallback: true
+}, async function (req, username, password, done) {
+    await db.login(username, async (err, result) => {
+        if (result != null) {
+            const valid = await bcrypt.compare(password, result.pass)
+            if (valid) {
+                done(null, result, req.flash('success', 'Bienvenido' + result.usuario + '.'));
+            }else{
+                done(null, false, req.flash('Contraseña incorrecta.' + result.usuario));
+            }
+        }else{
+            done(null, false, req.flash('El usuario no existe.'));
+        }
+    })
+}));
 
 passport.use("local.signup", new LocalStrategy({
     usernameField: "username",
@@ -27,7 +47,6 @@ passport.use("local.signup", new LocalStrategy({
     return done(null, Usuario);
 }));
 
-
 passport.serializeUser((usr, done) => {
     done(null, usr.id)
 })
@@ -40,6 +59,5 @@ passport.deserializeUser(async (id, done) => {
         }else 
             db.error(err.errno)
     })
-    console.log(rows)
     done(null, rows.id)
 })
