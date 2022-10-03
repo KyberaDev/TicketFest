@@ -27,12 +27,7 @@ router.get('/users/:id_user', (req, res) => {
 
 router.post('/users', (req, res) => {
     const data = req.body;
-    add_usuario(data, (err, result) => {
-        if (!err)
-            res.send("Nuevo Usuario [ ID ] - " + result)
-        else 
-            res.send(err)
-    })
+
 })
 
 router.put('/users', (req, res) => {

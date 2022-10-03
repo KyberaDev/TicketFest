@@ -5,13 +5,22 @@ const bcrypt = require("bcryptjs");
 
 //* CONNECTION *//
 
-const connection = mysql.createConnection({
+const keys = {
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "ticketfest_bd_v1.0.0",
+}
+
+const connection = mysql.createConnection(keys);
+
+const database = mysql.createPool({
+    connectionLimit: 10,
     host: "localhost",
     user: "root",
     password: "root",
     database: "ticketfest_bd_v1.0.0",
 });
-
 //* FUNCTIONS *//
 
 async function get_usuarios(callback) {
@@ -42,6 +51,7 @@ async function add_usuario(data, callback) {
     let result,
         err = null;
     data["id"] = uuidv4();
+    data["email"] = ((data["email"] == '') ? null : "'"+data["email"]+"'");
     data.password = bcrypt.hashSync(data.password, bcrypt.genSaltSync(10));
 
     try {
@@ -99,6 +109,8 @@ module.exports = {
     add_usuario,
     get_grupos,
     add_grupo,
+    keys,
+    error
 };
 
 //* PROMISES *//
@@ -127,7 +139,7 @@ function get_usuario_by_id__promise(id) {
 function add_usuario__promise(data) {
     return new Promise((resolve, reject) => {
         connection.query(
-            `CALL add_usuario('${data.id}','${data.name}', '${data.username}', '${data.mail}', '${data.password}');`,
+            `CALL add_usuario('${data.id}','${data.name}', '${data.username}', ${data.email}, '${data.password}');`,
             (err, res, fields) => {
                 if (err) {
                     reject(err);
@@ -170,4 +182,17 @@ function add_grupo__promise(data) {
             }
         );
     });
+}
+
+//* SHOW ERRORS *//
+function error(error_no) {
+    switch (error_no) {
+        case 1062:
+            console.log("Ya existe un usuario con ese nombre")
+            break;
+    
+        default:
+            console.log("Error desconocido en la base de datos.")
+            break;
+    }
 }

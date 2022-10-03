@@ -2,6 +2,7 @@ const ejs = require("ejs");
 const { Router } = require("express");
 const { add_grupo, get_grupos } = require("../modulos/data.js");
 const path = require("path");
+const { appendFile } = require("fs");
 
 const router = new Router();
 
@@ -9,6 +10,7 @@ router.get("/groups", (req, res) => {
     get_grupos(async (err, result) => {
         if (!err) {
             console.log(result);
+            req.flash('success', 'Grupos obtenidos')
             const html = await ejs.renderFile(
                 path.join(
                     "./",
@@ -18,7 +20,7 @@ router.get("/groups", (req, res) => {
                     "pages",
                     "groups.ejs"
                 ),
-                { groups: result },
+                { groups: result , success : req.flash('success')},
                 { async: false }
             );
             res.send(html);
