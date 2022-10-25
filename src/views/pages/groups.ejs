@@ -123,29 +123,34 @@
                         </div>
                         <div class="list__container">
                             <% for(let i=0; i < groups.length; i++) { %>
+                                <% let members_q = 0 %>
+                                <% for(let x=0; x < members.length; x++) { %>
+                                    <% if(members[x].id_grupo == groups[i].id && x <= 3) { %>
+                                            <% members_q++ %>
+                                    <% } %>
+                                <% } %>
                             <button
                                 class="item"
-                                onclick="location.href = '/group'"
+                                onclick="location.href = '/group/<%= groups[i].id %>'"
                             >
                                 <h3><%= groups[i].nombre %></h3>
-                                <p><i class="fa-solid fa-users"></i> 10</p>
+                                <p><i class="fa-solid fa-users"></i> <%= members_q %></p>
                                 <p>
                                     <i class="fa-regular fa-calendar-days"></i>
                                     <%= groups[i].fecha_creacion %>
                                 </p>
                                 <div class="members">
-                                    <div class="member">
-                                        <p>E</p>
-                                    </div>
-                                    <div class="member">
-                                        <p>X</p>
-                                    </div>
-                                    <div class="member">
-                                        <p>A</p>
-                                    </div>
-                                    <div class="member last">
-                                        <p>+7</p>
-                                    </div>
+                                    <% for(let x=0; x < members.length; x++) { %>
+                                        <% if(members[x].id_grupo == groups[i].id && x <= 3) { %>
+                                            <div class="member">
+                                                <p>E</p>
+                                            </div>
+                                        <% } else if(members[x].id_grupo == groups[i].id && x > 3){%>
+                                            <div class="member last">
+                                                <p>+<%= members.length - 3 %></p>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
                                 </div>
                             </button>
 

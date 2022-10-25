@@ -54,7 +54,12 @@ router.post('/login', notLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
 
-
+router.get('/logout', (req, res) => {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+});
 /*
 router.post('/signup', async (req, res) => {
     const data = req.body

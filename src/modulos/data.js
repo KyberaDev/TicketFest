@@ -14,13 +14,6 @@ const keys = {
 
 const connection = mysql.createConnection(keys);
 
-const database = mysql.createPool({
-    connectionLimit: 10,
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "ticketfest_bd_v1.0.0",
-});
 //* FUNCTIONS *//
 
 async function login(username, callback) {
@@ -46,6 +39,18 @@ async function get_usuarios(callback) {
     }
 
     if (typeof callback == "function") callback(err, result);
+}
+
+async function get_user_name(id) {
+    let result,
+        err = null;
+    try {
+        result = await get_user_name__promise(id);
+    } catch (error) {
+        err = error;
+    }
+
+    return result
 }
 
 async function get_usuarios_by_id(id, callback) {
@@ -92,12 +97,45 @@ async function get_grupos_by_id_usuario(id, callback) {
     let result,
         err = null;
     try {
-        result = await get_usuarios__promise();
+        result = await get_grupos_by_id_usuario__promise(id);
     } catch (error) {
         err = error;
     }
 
     if (typeof callback == "function") callback(err, result);
+}
+
+async function get_group_data(id, callback) {
+    console.log('id_grupo '+id)
+    let result,
+        err = null;
+    try {
+        result = await get_group_data__promise(id);
+    } catch (error) {
+        err = error;
+    }
+
+    if (typeof callback == "function") callback(err, result);
+}
+
+async function get_group_members(id){
+    let result,
+    err = null;
+    try {
+        return await get_group_members__promise(id);
+    } catch (error) {
+        err = error;
+    }
+}
+
+async function get_all_groups_members(){
+    let result,
+    err = null;
+    try {
+        return await get_all_groups_members__promise();
+    } catch (error) {
+        err = error;
+    }
 }
 
 async function add_grupo(data, callback) {
@@ -124,7 +162,12 @@ module.exports = {
     add_grupo,
     keys,
     error,
-    login
+    login,
+    get_grupos_by_id_usuario,
+    get_group_data,
+    get_group_members,
+    get_user_name,
+    get_all_groups_members
 };
 
 //* PROMISES *//
@@ -141,6 +184,15 @@ function login__promise(username) {
 function get_usuarios__promise() {
     return new Promise((resolve, reject) => {
         connection.query(`SELECT * FROM usuarios;`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res);
+        });
+    });
+}
+
+function get_user_name__promise(id) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT nombre FROM usuarios WHERE id = '${id}';`, (err, res, fields) => {
             if (err) reject(err);
             resolve(res);
         });
@@ -188,10 +240,46 @@ function get_grupos__promise() {
     });
 }
 
+function get_grupos_by_id_usuario__promise(id) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM grupos WHERE id IN (SELECT id_grupo FROM usuarios_grupos WHERE id_usuario = '${id}');`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res);
+        });
+    });
+}
+
+function get_group_data__promise(id) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT nombre, inv_code FROM grupos WHERE id = '${id}';`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res);
+        });
+    });
+}
+
+function get_group_members__promise(id) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT nombre FROM usuarios WHERE id IN (SELECT id_usuario FROM usuarios_grupos WHERE id_grupo = '${id}');`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res);
+        });
+    });
+}
+
+function get_all_groups_members__promise() {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM usuarios_grupos;`, (err, res, fields) => {
+            if (err) reject(err);
+            resolve(res);
+        });
+    });
+}
+
 function add_grupo__promise(data) {
     return new Promise((resolve, reject) => {
         connection.query(
-            `CALL add_grupo('${data.id}','${data.name}', '${data.inv_code}');`,
+            `CALL add_grupo('${data.id}','${data.groupName}', '${data.inv_code}', '${data.user}');`,
             (err, res, fields) => {
                 if (err) {
                     reject(err);
